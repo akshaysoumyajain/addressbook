@@ -14,16 +14,17 @@ pipeline {
             }
         }
         stage('Unittest') {
-            steps {
-                echo 'Testing the code'
-            }
-        }
-        stage('Package') {
             when {
                 expression {
                     params.executeTests == true
                 }
             }
+            steps {
+                echo 'Testing the code'
+            }
+        }
+        stage('Package') {
+           
             steps {
                 echo 'Packaging the code'
                 echo "Packaging version ${params.APPVERSION}"
