@@ -40,7 +40,7 @@ pipeline {
             // agent {
             //     label 'linux_slave1'
             // }
-
+            agent any
             input {
                 message "Select the version to package"
                 ok "Version selected"
